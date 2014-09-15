@@ -2,7 +2,11 @@
   "name": "deckplayground",
   "version": "0.0.0",
   "description": "Making limited constructed easier",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.9.0",
+    "gzippo": "^0.2.0",
+    "morgan": "^1.3.1"
+  },
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^0.7.3",
@@ -39,6 +43,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "start": "node web.js"
   }
 }

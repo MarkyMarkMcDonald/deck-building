@@ -1,0 +1,6 @@
+---
+applications:
+- name: deck-builder
+  command: npm start
+- name: deck-builder-staging
+  command: npm start
