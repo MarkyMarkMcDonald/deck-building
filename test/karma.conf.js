@@ -14,7 +14,7 @@ module.exports = function(config) {
     basePath: '../',
 
     // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine', 'fixture'],
+    frameworks: ['jasmine'],
 
     // list of files / patterns to load in the browser
     files: [
@@ -29,12 +29,10 @@ module.exports = function(config) {
       'app/scripts/**/*.js',
       'test/spec/**/*.js',
       'app/views/**/*.html',
-      'test/fixtures/**/*'
     ],
 
     preprocessors: {
       'app/views/**/*.html': ['ng-html2js'],
-      'test/fixtures/**/*': ['json2js']
     },
 
     // list of files / patterns to exclude
@@ -60,8 +58,6 @@ module.exports = function(config) {
       'karma-jasmine',
       'karma-phantomjs-launcher',
       'karma-ng-html2js-preprocessor',
-      'karma-json2js-preprocessor',
-      'karma-fixture'
     ],
 
     // Continuous Integration mode

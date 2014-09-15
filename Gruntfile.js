@@ -55,15 +55,6 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
-      },
-      html2js: {
-        options: {
-          // custom options, see below
-        },
-        main: {
-          src: ['/**/*.tpl.html'],
-          dest: 'tmp/templates.js'
-        }
       }
     },
 

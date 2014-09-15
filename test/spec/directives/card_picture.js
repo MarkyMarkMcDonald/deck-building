@@ -10,13 +10,76 @@ describe('Directive: cardPicture', function () {
   var element, $scope, $httpBackend;
 
   beforeEach(inject(function ($rootScope, _$httpBackend_) {
-    var fixtures = window.__json__;
-    var cardSearchResponse = fixtures['test/fixtures/json/lightning_bolt_search.json']; // vomit
-
     $scope = $rootScope.$new();
     $httpBackend = _$httpBackend_;
     $httpBackend.when('GET', 'http://api.mtgdb.info/cards/Lightning%20Bolt')
-      .respond(cardSearchResponse)
+      .respond(
+        [
+          {
+            "id": 191089,
+            "relatedCardId": 0,
+            "setNumber": 146,
+            "name": "Lightning Bolt",
+            "searchName": "lightningbolt",
+            "description": "Lightning Bolt deals 3 damage to target creature or player.",
+            "flavor": " The sparkmage shrieked, calling on the rage of the storms of his youth. To his surprise, the sky responded with a fierce energy he'd never thought to see again.",
+            "colors": ["red"],
+            "manaCost": "R",
+            "convertedManaCost": 1,
+            "cardSetName": "Magic 2010",
+            "type": "Instant",
+            "subType": null,
+            "power": 0,
+            "toughness": 0,
+            "loyalty": 0,
+            "rarity": "Common",
+            "artist": "Christopher Moeller",
+            "cardSetId": "M10",
+            "token": false,
+            "promo": false,
+            "rulings": [],
+            "formats": [
+              {
+                "name": "Modern",
+                "legality": "Legal"
+              },
+              {
+                "name": "Legacy",
+                "legality": "Legal"
+              },
+              {
+                "name": "Vintage",
+                "legality": "Legal"
+              },
+              {
+                "name": "Freeform",
+                "legality": "Legal"
+              },
+              {
+                "name": "Prismatic",
+                "legality": "Legal"
+              },
+              {
+                "name": "Tribal Wars Legacy",
+                "legality": "Legal"
+              },
+              {
+                "name": "Classic",
+                "legality": "Legal"
+              },
+              {
+                "name": "Singleton 100",
+                "legality": "Legal"
+              },
+              {
+                "name": "Commander",
+                "legality": "Legal"
+              }
+            ],
+            "releasedAt": "2009-07-17"
+          }
+      ]
+    )
   }));
 
   it('should display a card image based off a card name', inject(function ($compile) {
