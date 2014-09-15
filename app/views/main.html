@@ -4,7 +4,6 @@
   <form name="deck-import" ng-submit="exportCards()">
     <textarea ng-model="deckList" name="deck-list" id="deck-list" cols="30" rows="10"
               placeholder="4x Lightning Bolt"></textarea>
-
     <div>
       <input type="submit" value="import">
     </div>
@@ -13,14 +12,7 @@
 
 <div ng-show="cards">
   <div ng-repeat="card in cards">
-    <card-picture>
-
-    </card-picture>
-
-  </div>
-
-
-  <div ng-repeat="card in cards">
-    {{ card.quantity }}x {{ card.name }}
+    <span card-picture>
+    </span>
   </div>
 </div>

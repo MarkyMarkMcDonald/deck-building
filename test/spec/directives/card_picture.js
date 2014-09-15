@@ -89,6 +89,6 @@ describe('Directive: cardPicture', function () {
     $scope.$digest();
 
     $httpBackend.flush();
-    expect(element.attr('src')).toBe('http://api.mtgdb.info/content/card_images/191089.jpeg');
+    expect($scope.pictureUrl).toBe('http://api.mtgdb.info/content/card_images/191089.jpeg');
   }));
 });

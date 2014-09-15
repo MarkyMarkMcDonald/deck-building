@@ -87,5 +87,6 @@ module.exports = function(config) {
       // from all the files, so you can load them all with module('foo')
       moduleName: 'testTemplates'
     }
+
   });
 };

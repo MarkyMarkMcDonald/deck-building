@@ -17,30 +17,34 @@ describe('Controller: MainCtrl', function() {
 
   var expectedCards = [
     {
-      name: 'Lightning Bolt',
-      quantity: 4
+      name: 'Lightning Bolt'
+    },{
+      name: 'Lightning Bolt'
+    },{
+      name: 'Lightning Bolt'
+    },{
+      name: 'Lightning Bolt'
     },
     {
-      name: 'Mountain',
-      quantity: 10
+      name: 'Mountain'
     },
     {
-      name: 'Lightning Strike',
-      quantity: 3
+      name: 'Mountain'
     },
     {
-      name: 'Fireball',
-      quantity: 4
+      name: 'Mountain'
     },
     {
-      name: 'Lightning Axe',
-      quantity: 3
+      name: 'Mountain'
+    },
+    {
+      name: 'Mountain'
     }
   ];
 
   describe('.exportCards', function() {
     it("should turn a decklist into an array of card objects", function() {
-      scope.deckList = ['4x Lightning Bolt', '10 Mountain', '3x Lightning Strike', '4 Fireball', '3 Lightning Axe']
+      scope.deckList = ['4x Lightning Bolt', '5 Mountain']
         .join('\n');
       scope.exportCards();
       expect(scope.cards).toEqual(expectedCards)
