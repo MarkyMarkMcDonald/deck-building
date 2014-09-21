@@ -11,17 +11,23 @@ angular.module('deckPlaygroundApp')
   .controller('MainCtrl', function($scope) {
 
     $scope.exportCards = function() {
-      var unflattenedCards = $scope.deckList.split("\n").map(function(cardLine) {
+      $scope.deckLines = $scope.deckList.split("\n").map(function(cardLine) {
         var quantity = cardLine.match(/\d+/)[0];
         var name = cardLine.match(/\W.*/)[0].trim();
 
-        var cardToAdd = [];
-        for (var i = 0; i < quantity; i++) {
-          cardToAdd.push({ name: name })
-        }
-        return cardToAdd;
+        return {
+          quantity: quantity,
+          name: name
+        };
       });
-      $scope.cards = [].concat.apply([], unflattenedCards); // unflattenedCards.flatten C'MON YAVASCRIPT
+
+      var cards = [];
+      $scope.deckLines.forEach(function(deckLine) {
+        for (var i = 0; i < deckLine.quantity; i++) {
+          cards.push({ name: deckLine.name })
+        }
+      });
+      $scope.cards = cards;
     }
 
   });

@@ -4,15 +4,27 @@
   <form name="deck-import" ng-submit="exportCards()">
     <textarea ng-model="deckList" name="deck-list" id="deck-list" cols="30" rows="10"
               placeholder="4x Lightning Bolt"></textarea>
+
     <div>
-      <input type="submit" value="import">
+      <input class="btn btn-default" type="submit" value="Import">
     </div>
   </form>
 </div>
 
-<div id="editor" ng-show="cards">
-  <div ng-repeat="card in cards">
+<div ng-show="cards">
+  <div ng-hide="showDecklist">
+    <button class="btn btn-info" ng-click="showDecklist = true">Show Deck List</button>
+  </div>
+  <div ng-show="showDecklist">
+    <button class="btn btn-info" ng-click="showDecklist = false">Hide Deck List</button>
+    <div ng-repeat="deckLine in deckLines">
+      {{ deckLine.quantity }} {{ deckLine.name }}
+    </div>
+  </div>
+  <div id="editor">
+    <div ng-repeat="card in cards">
     <span card-picture>
     </span>
+    </div>
   </div>
 </div>
